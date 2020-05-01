@@ -12,3 +12,4 @@ type MessengerPluginConfigurationStruct struct {
 type CommandPluginConfigurationStruct struct {
 	Messenger plugin.Symbol
 }
+
