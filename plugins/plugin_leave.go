@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
-	"structs"
+	structs "github.com/pavelkim/tcp_socket_server/structs"
 )
 
 /*

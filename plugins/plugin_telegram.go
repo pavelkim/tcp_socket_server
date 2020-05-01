@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"structs"
+	structs "github.com/pavelkim/tcp_socket_server/structs"
 )
 
 type SendMessageStruct struct {

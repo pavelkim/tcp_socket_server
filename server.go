@@ -1,10 +1,11 @@
-package main
+package tcp_socket_server
 
 import (
 	"bufio"
 	"encoding/json"
 	"flag"
 	"fmt"
+	structs "github.com/pavelkim/tcp_socket_server/structs"
 	"io"
 	"log"
 	"net"
@@ -12,7 +13,6 @@ import (
 	"os/signal"
 	"plugin"
 	"strings"
-	"structs"
 	"syscall"
 )
 

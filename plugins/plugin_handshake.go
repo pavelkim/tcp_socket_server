@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
-	"structs"
+	structs "github.com/pavelkim/tcp_socket_server/structs"
 )
 
 /*
