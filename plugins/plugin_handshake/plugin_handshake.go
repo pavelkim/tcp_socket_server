@@ -1,9 +1,9 @@
-package main
+package plugin_handshake
 
 import (
 	"fmt"
-	"log"
 	structs "github.com/pavelkim/tcp_socket_server/structs"
+	"log"
 )
 
 /*

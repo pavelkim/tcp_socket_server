@@ -1,13 +1,13 @@
-package main
+package plugin_telegram
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	structs "github.com/pavelkim/tcp_socket_server/structs"
 	"io/ioutil"
 	"log"
 	"net/http"
-	structs "github.com/pavelkim/tcp_socket_server/structs"
 )
 
 type SendMessageStruct struct {

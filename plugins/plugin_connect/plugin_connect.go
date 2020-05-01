@@ -1,10 +1,10 @@
-package main
+package plugin_connect
 
 import (
 	"fmt"
+	structs "github.com/pavelkim/tcp_socket_server/structs"
 	"log"
 	"strings"
-	structs "github.com/pavelkim/tcp_socket_server/structs"
 )
 
 /*
