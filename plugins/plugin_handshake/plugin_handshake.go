@@ -1,4 +1,4 @@
-package plugin_handshake
+package main
 
 import (
 	"fmt"

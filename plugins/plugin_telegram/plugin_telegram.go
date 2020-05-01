@@ -1,4 +1,4 @@
-package plugin_telegram
+package main
 
 import (
 	"bytes"

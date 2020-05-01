@@ -1,4 +1,4 @@
-package plugin_enter
+package main
 
 import (
 	"fmt"

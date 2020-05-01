@@ -1,4 +1,4 @@
-package plugin_leave
+package main
 
 import (
 	"fmt"
