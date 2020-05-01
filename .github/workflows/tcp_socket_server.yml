@@ -33,5 +33,31 @@ jobs:
     - name: Build
       run: go build -v .
 
+    - name: Verify binary file
+      run: md5sum tcp_socket_server
+
     - name: Test
       run: go test -v .
+
+    - name: Create a Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        # The name of the release. For example, `Release v1.0.1`
+        release_name: Release ${{ github.ref }}
+        body: Automatically generated release
+        draft: true
+        prerelease: false
+
+    - name: Upload a Release Asset
+      uses: actions/upload-release-asset@v1.0.2
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./tcp_socket_server
+        asset_name: tcp_socket_server
+        asset_content_type: application/octet-stream
