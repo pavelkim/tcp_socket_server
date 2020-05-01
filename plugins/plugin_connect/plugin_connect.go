@@ -1,4 +1,4 @@
-package plugin_connect
+package main
 
 import (
 	"fmt"
