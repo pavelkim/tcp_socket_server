@@ -16,3 +16,6 @@
 
 # All 'hidden' files
 .*
+server.log
+server.conf
+tcp_socket_server
