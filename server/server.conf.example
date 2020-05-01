@@ -1,0 +1,24 @@
+{
+  "handlers": [
+    {
+      "command": "CONNECT",
+      "filename": "plugins/plugin_connect.so"
+    },
+    {
+      "command": "ENTER",
+      "filename": "plugins/plugin_enter.so"
+    },
+    {
+      "command": "LEAVE",
+      "filename": "plugins/plugin_leave.so"
+    }
+  ],
+  "messenger": {
+    "platform": "telegram",
+    "filename": "plugins/plugin_telegram.so",
+    "configuration": {
+      "token": "CHANGEME",
+      "chat_id": -9000
+    }
+  }
+}
