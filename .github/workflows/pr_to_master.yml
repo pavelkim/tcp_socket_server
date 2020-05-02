@@ -51,9 +51,7 @@ jobs:
     - name: Lookup a tag
       id: tagexists
       run: |
-        echo "::set-output name=tagexists::$(curl -s -X GET -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \ 
-        --url https://api.github.com/repos/${{ github.repository }}/git/refs/tags/v${{steps.readversionfile.outputs.desiredversion}} \
-        | jq .object.sha)"
+        echo "::set-output name=tagexists::$(curl -s -X GET -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --url https://api.github.com/repos/${{ github.repository }}/git/refs/tags/v${{steps.readversionfile.outputs.desiredversion}} | jq .object.sha)"
     
     - name: Check if tag exists
       run: if [[ "${{ steps.tagexists.outputs.tagexists }}" == "" ]]; then exit 2; else exit 0;
