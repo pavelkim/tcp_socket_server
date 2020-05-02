@@ -2,12 +2,12 @@ name: Go
 
 on:
   push:
-    branches: [ master ]
+    branches: [ dev ]
 
 jobs:
 
   build:
-    name: Build master branch
+    name: Build dev branch
     runs-on: ubuntu-latest
     steps:
 
@@ -95,3 +95,4 @@ jobs:
         asset_path: ./tcp_socket_server
         asset_name: tcp_socket_server
         asset_content_type: application/octet-stream
+
