@@ -42,6 +42,9 @@ type ConfigurationStruct struct {
 
 var Configuration = ConfigurationStruct{}
 
+var ApplicationDescription string = "TCP Socket Server"
+var BuildVersion string = ""
+
 func handleConnection(connection net.Conn) {
 
 	log.Printf("Serving %s\n", connection.RemoteAddr().String())
@@ -178,8 +181,15 @@ func main() {
 	portPtr := flag.String("port", "28000", "Port to listen")
 	configPtr := flag.String("config", "server.conf", "Path to configuration file")
 	logfilePtr := flag.String("logfile", "server.log", "Path to log file")
+	showVersionPtr := flag.Bool("version", false, "Show version")
 
 	flag.Parse()
+
+	if *showVersionPtr {
+		fmt.Printf("%s\n", ApplicationDescription)
+		fmt.Printf("Version: %s\n", BuildVersion)
+		os.Exit(0)
+	}
 
 	logFile, err := os.OpenFile(*logfilePtr, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
