@@ -54,4 +54,4 @@ jobs:
         echo "::set-output name=tagexists::$(curl -s -X GET -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --url https://api.github.com/repos/${{ github.repository }}/git/refs/tags/v${{steps.readversionfile.outputs.desiredversion}} | jq .object.sha)"
     
     - name: Check if tag exists
-      run: if [[ "${{ steps.tagexists.outputs.tagexists }}" == "" ]]; then exit 2; else exit 0;
+      run: if [[ "${{ steps.tagexists.outputs.tagexists }}" == "" ]]; then exit 0; else exit 2; fi
