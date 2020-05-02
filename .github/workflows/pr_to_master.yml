@@ -56,4 +56,4 @@ jobs:
         | jq .object.sha)"
     
     - name: Check if tag exists
-      if: ${{ steps.tagexists.outputs.tagexists != '' }}
+      run: if [[ "${{ steps.tagexists.outputs.tagexists }}" == "" ]]; then exit 2; else exit 0;
