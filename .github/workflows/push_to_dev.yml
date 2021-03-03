@@ -48,6 +48,13 @@ jobs:
     - name: Build plugins
       run: for item in plugins/*/*go; do source_filename="${item#*/*/}"; plugin_name="${source_filename%.*}"; go build -v -buildmode=plugin -o "${plugin_name}.so" "${item}"; done
 
+    - name: Upload Build Artifacts
+      id: upload_artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:
+        path: plugins/**/*.so
+        retention-days: 30
+
     - name: Verify binary file
       run: md5sum tcp_socket_server
 
