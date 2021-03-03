@@ -52,6 +52,7 @@ jobs:
       id: upload_artifact
       uses: actions/upload-artifact@v2.2.2
       with:
+        name: "plugins"
         path: "./*.so"
         retention-days: 30
 
