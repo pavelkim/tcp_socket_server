@@ -52,7 +52,7 @@ jobs:
       id: upload_artifact
       uses: actions/upload-artifact@v2.2.2
       with:
-        path: plugins/**/*.so
+        path: *.so
         retention-days: 30
 
     - name: Verify binary file
